@@ -83,9 +83,35 @@ public class InitiateUtils implements CommandLineRunner {
 
         providerService.saveAll(provider);//сохраняем List поставщиков
         System.out.println("\nТаблица поставщиков");
-        for (ProviderEntity providerEntity : provider){
+        for (ProviderEntity providerEntity : provider) {
             System.out.println(providerEntity);
         }
+
+
+        //System.out.println("\n" + fruitService.getById(1));
+        //fruitService.delById(1);
+
+
+        //System.out.println("\n" + providerService.getById(1));
+        //providerService.delById(1);
+
+        System.out.println("\nТаблица фруктов и их поставщиков");
+        for (String join : fruitService.joinString()) {
+            System.out.println(join);
+        }
+
+        System.out.println("\nТаблица фруктов и их поставщиков");
+        for (FruitEntity join : fruitService.joinFruit()) {
+            System.out.println(join);
+        }
+
+
+        System.out.println("\nТаблица фруктов и их поставщиков");
+        for (String join : fruitService.joinString()) {
+            System.out.println(join);
+        }
+
+
 
 
         //создаем несколько сущностей фруктов, через сеттеры заполняем поля
